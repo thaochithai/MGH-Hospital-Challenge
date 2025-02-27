@@ -4,7 +4,9 @@
 This project presents a comprehensive analytics dashboard for Massachusetts General Hospital (MGH), focusing on patient demographics, hospital operations, and financial performance. The dashboard provides actionable insights to support strategic decision-making and operational improvements.
 
 ## 🔄 Data Model
-<img width="633" alt="Screenshot 2025-02-27 204404" src="https://github.com/user-attachments/assets/77289966-2543-4840-a526-c7e7e8c6cc63" />
+
+<img width="633" alt="Screenshot 2025-02-27 204404" src="https://github.com/user-attachments/assets/c1eeb304-d93b-43a1-963f-158b78ffa6ce" />
+
 ### Star Schema Implementation
 The dashboard utilizes a star schema data model with:
 
@@ -31,7 +33,7 @@ The dashboard consists of four main tabs:
 ## 🔍 Key Features & Technical Implementation
 
 ### 👥 Patient Analytics
-<img width="633" alt="Patient Analytics Dashboard" src="https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92"/>
+![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
 
 #### 📐 Advanced Metrics Implementation:
 - **Geographic Analysis**: Calculated patient distance from hospital using longitude and latitude coordinates
