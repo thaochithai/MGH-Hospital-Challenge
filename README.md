@@ -12,6 +12,20 @@ The first tab show the overall performance of MGH hospital in term of Patient, O
 - Distance in km: The dataset offer the longtitude and latitude of the patients and hospital, and then I used that to calculate the distance
 - New patients: the number of new patients are calculated using the first encounter date  referred as joining date
 - Admission: the data provide the log time of the start and end of hospital visit > admitted patient is defined as the patient has encounter duration longer than 1 day, which mean they stay overnight
+DAX
+Average Length of Stay = 
+AVERAGEX(
+        SUMMARIZE(
+            FILTER(
+        encounters,
+        encounters[DURATION]>0),
+        encounters[Id],
+        encounters[START],
+        encounters[STOP],
+        "duration", (encounters[STOP]-encounters[START])
+    ), 
+    ([duration])
+)
 - Re-admission: the average time between revisit and readmission is calculated by the day between two consecutive encounter dates
   
   Days Between = 
