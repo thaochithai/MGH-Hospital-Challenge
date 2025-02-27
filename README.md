@@ -5,7 +5,7 @@ This project presents a comprehensive analytics dashboard for Massachusetts Gene
 
 ## 🔄 Data Model
 
-<img width="633" alt="Screenshot 2025-02-27 204404" src="https://github.com/user-attachments/assets/c1eeb304-d93b-43a1-963f-158b78ffa6ce" />
+<img width="751" alt="Screenshot 2025-02-27 204953" src="https://github.com/user-attachments/assets/90ffaa5b-a9f9-4eb0-b7d2-1b8c9e0628e3" />
 
 ### Star Schema Implementation
 The dashboard utilizes a star schema data model with:
