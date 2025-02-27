@@ -1,24 +1,36 @@
-# MGH-Hospital-Challenge
-Analytics Dashboard for Hospital
+# 🏥 MGH Hospital Analytics Dashboard
 
-# Visualization
-The first tab show the overall performance of MGH hospital in term of Patient, Operation and Finance aspects and the following tabs show the details of each of the aspects.
-![1](https://github.com/user-attachments/assets/4f2ba6f3-2167-4fee-87b7-7163e4135139)
+## 📊 Overview
+This project presents a comprehensive analytics dashboard for Massachusetts General Hospital (MGH), focusing on patient demographics, hospital operations, and financial performance. The dashboard provides actionable insights to support strategic decision-making and operational improvements.
 
-**Patients**
-![2](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
+## 🔄 Data Model
+![Data Schema](https://github.com/user-attachments/assets/8b65d8b9-5fdf-4a33-9548-3ffeb3437e6b)
 
-1. Features Creation:
-- Distance in km: The dataset offer the longtitude and latitude of the patients and hospital, and then I used that to calculate the distance
-- New patients: the number of new patients are calculated using the first encounter date  referred as joining date
-- Admission: the data provide the log time of the start and end of hospital visit > admitted patient is defined as the patient has encounter duration longer than 1 day, which mean they stay overnight
-DAX
+## 📱 Dashboard Structure
+The dashboard consists of four main tabs:
+1. **Executive Summary** - Overall hospital performance across patient, operational, and financial metrics
+2. **Patient Analytics** - Detailed patient demographics and visit patterns
+3. **Hospital Operations** - Operational efficiency and resource utilization
+4. **Financial Performance** - Revenue streams and cost analysis
+
+## 🔍 Key Features & Technical Implementation
+
+### 👥 Patient Analytics
+![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
+
+#### 📐 Advanced Metrics Implementation:
+- **Geographic Analysis**: Calculated patient distance from hospital using longitude and latitude coordinates
+- **Patient Acquisition Tracking**: Identified new patients based on first encounter date
+- **Admission Classification**: Categorized visits with encounter duration > 1 day as admissions
+- **Length of Stay Calculation**: Implemented DAX measures to calculate average stay duration
+
+```
 Average Length of Stay = 
 AVERAGEX(
-        SUMMARIZE(
-            FILTER(
-        encounters,
-        encounters[DURATION]>0),
+    SUMMARIZE(
+        FILTER(
+            encounters,
+            encounters[DURATION]>0),
         encounters[Id],
         encounters[START],
         encounters[STOP],
@@ -26,9 +38,12 @@ AVERAGEX(
     ), 
     ([duration])
 )
-- Re-admission: the average time between revisit and readmission is calculated by the day between two consecutive encounter dates
-  
-  Days Between = 
+```
+
+- **Readmission Analysis**: Calculated intervals between consecutive patient visits using complex DAX formulas
+
+```
+Days Between = 
 AVERAGEX(
     VALUES(encounters[PATIENT]),
     VAR CurrentPatientID = encounters[PATIENT]
@@ -62,36 +77,60 @@ AVERAGEX(
     RETURN
         AVERAGEX(NonBlankDifferences, [DaysDifference])
 )
+```
 
-2. Insights
-The top city with the most patients is Boston
-- Patients are mostly senior citizens aged 60 - 100
-- High patient return rate but a modest number of new patients
-- Patients live in proximity to the hospital, with older patients residing closer 
-- Each patient has an average of 2 insurances, with Medicare being the most popular among patients (patients have different insurance companies to pay for different procedures)
-- 19% of patients visited hospital are admitted 
-- Average time between patient visits is around ﻿9﻿ months, and readmission is over a year 
-> Targeted care for different age groups, 30 - 45 needs problem consultations and prenatal care, 46 - 60 require more medical interventions and treatments, while seniors (> 61) need regular follow-ups and urgent care
+#### 💡 Key Insights:
+- Boston residents constitute the largest patient segment
+- Patient demographics skew toward seniors (60-100 years)
+- High patient return rate but moderate new patient acquisition
+- Patients typically live in proximity to the hospital, with older patients residing closer
+- Multiple insurance coverage is common (avg. 2 per patient), with Medicare being predominant
+- 19% hospital visit rate for admissions
+- Average interval between visits: ~9 months; readmission interval: >1 year
 
-**Hospital Operation**
-![3](https://github.com/user-attachments/assets/71ee3831-375c-4222-b42d-c44a336aeec1)
+#### 🎯 Strategic Implications:
+- **Age-Based Care Models**: Tailored approaches for different demographic segments:
+  - 30-45 age group: Problem consultations and prenatal care
+  - 46-60 age group: Medical interventions and treatments
+  - 61+ age group: Regular follow-ups and urgent care services
 
-Insights:
-- Patients mostly encountered via ambulance or for outpatient services.
-- Inpatient admissions remain relatively low.
-- Care cooperation is relatively efficient and immediate, supported by encounter duration < 1 day and Average Length of Stay is 6.7 (< 9.9 average OECD countries)
-- The hospital is busiest during weekday mornings, specifically from 3-4 AM and 8-9 AM, as well as in the afternoon from 5-6 PM. Weekdays generally see higher activity compared to weekends.
-> The COVID-19 pandemic drove more encounters for vaccines and introduced new respiratory-related procedures
+### ⚕️ Hospital Operations
+![Operations Dashboard](https://github.com/user-attachments/assets/71ee3831-375c-4222-b42d-c44a336aeec1)
 
-**Finance**
-![4](https://github.com/user-attachments/assets/41ac47ac-cbd8-4671-85b5-e0227c62082c)
+#### Key Insights:
+- Ambulatory services and outpatient care dominate encounter types
+- Inpatient admissions represent a smaller proportion of overall hospital activity
+- Care coordination metrics show efficiency: most encounters resolve within 24 hours
+- Average Length of Stay: 6.7 days (below OECD country average of 9.9 days)
+- Peak operation times: Weekday mornings (3-4 AM, 8-9 AM) and afternoons (5-6 PM)
+- Significant weekday vs. weekend activity differential
 
-Insights:
-- The hospital's revenue relies on check-ups, prenatal care, and urgent care services, accounting for nearly 50%. Of all procedures performed, 52% are covered.
-- Steady Revenue with a sharp increase in 2020–2021 due to the pandemic after prolonged decline since 2014
-- Highest revenue is from 91-100 and 76-90, while 30-45 is potential age group with significant revenue and highest cost per encounter despite being smaller segment
-- Medicare is the leading contributor, making it a crucial partner in insurance-paid procedures.
-> Revenue primarily comes from urgent care and check-ups, especially from patients aged 76-100. Prenatal visits, costing three times more than average, make the 30-45 age group a key segment.
+#### Strategic Implications:
+- COVID-19 pandemic drove substantial increases in vaccination encounters
+- Resource allocation should prioritize peak operational periods
 
-# Data Information
-The data is provided by Maven Analytics
+### 💰 Financial Performance
+![Financial Dashboard](https://github.com/user-attachments/assets/41ac47ac-cbd8-4671-85b5-e0227c62082c)
+
+#### Key Insights:
+- Primary revenue drivers: check-ups, prenatal care, and urgent care (nearly 50% of revenue)
+- Insurance coverage for 52% of all procedures performed
+- Revenue trend: Declining from 2014, with sharp recovery in 2020-2021 during pandemic
+- Highest revenue by age group: 91-100 and 76-90
+- Emerging opportunity in 30-45 age group: highest cost per encounter despite smaller segment
+- Medicare leads as primary payer, establishing it as a crucial partner
+
+#### Strategic Implications:
+- Revenue optimization should focus on urgent care and check-up service lines
+- Consider expanded prenatal services targeting 30-45 age group (3x higher per-encounter cost)
+
+## 📁 Data Source
+This project utilizes data provided by Maven Analytics.
+
+## 🛠️ Technical Skills Demonstrated
+- Complex DAX formula creation
+- Advanced data modeling
+- Calculated metrics for healthcare KPIs
+- Geospatial visualization
+- Multi-dimensional analysis
+- Trend identification and forecasting
