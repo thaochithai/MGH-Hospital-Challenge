@@ -13,6 +13,41 @@ The first tab show the overall performance of MGH hospital in term of Patient, O
 - New patients: the number of new patients are calculated using the first encounter date  referred as joining date
 - Admission: the data provide the log time of the start and end of hospital visit > admitted patient is defined as the patient has encounter duration longer than 1 day, which mean they stay overnight
 - Re-admission: the average time between revisit and readmission is calculated by the day between two consecutive encounter dates
+  
+  Days Between = 
+AVERAGEX(
+    VALUES(encounters[PATIENT]),
+    VAR CurrentPatientID = encounters[PATIENT]
+    VAR EngagementDates = 
+        CALCULATETABLE(
+            VALUES(encounters[START]),
+            encounters[PATIENT] = CurrentPatientID
+        )
+    VAR DateDifferences = 
+        ADDCOLUMNS(
+            EngagementDates,
+            "DaysDifference", 
+                DATEDIFF(
+                    CALCULATE(
+                        MAX(encounters[START]),
+                        FILTER(
+                            encounters,
+                            encounters[PATIENT] = CurrentPatientID &&
+                            encounters[START] < EARLIER(encounters[START])
+                        )
+                    ),
+                    encounters[START], 
+                    DAY
+                )
+        )
+    VAR NonBlankDifferences = 
+        FILTER(
+            DateDifferences,
+            NOT(ISBLANK([DaysDifference]))
+        )
+    RETURN
+        AVERAGEX(NonBlankDifferences, [DaysDifference])
+)
 
 2. Insights
 The top city with the most patients is Boston
