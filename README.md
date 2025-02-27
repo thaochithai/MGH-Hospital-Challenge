@@ -4,7 +4,22 @@
 This project presents a comprehensive analytics dashboard for Massachusetts General Hospital (MGH), focusing on patient demographics, hospital operations, and financial performance. The dashboard provides actionable insights to support strategic decision-making and operational improvements.
 
 ## 🔄 Data Model
-![Data Schema](https://github.com/user-attachments/assets/8b65d8b9-5fdf-4a33-9548-3ffeb3437e6b)
+<img width="633" alt="Screenshot 2025-02-27 204404" src="https://github.com/user-attachments/assets/77289966-2543-4840-a526-c7e7e8c6cc63" />
+### Star Schema Implementation
+The dashboard utilizes a star schema data model with:
+
+#### Fact Table
+- **encounters**: Contains all patient visit records and core metrics
+
+#### Dimension Tables
+- **patients_lookup**: Patient demographic information and attributes
+- **procedures_lookup**: Medical procedures reference data
+- **payers_lookup**: Insurance and payment method information
+- **organization_lookup**: Healthcare facility and department data
+- **calendar_lookup**: Date dimension for time-based analysis
+
+#### DAX Calculations
+The model leverages numerous DAX measures to create calculated metrics and KPIs that power the visualizations throughout the dashboard.
 
 ## 📱 Dashboard Structure
 The dashboard consists of four main tabs:
@@ -16,7 +31,7 @@ The dashboard consists of four main tabs:
 ## 🔍 Key Features & Technical Implementation
 
 ### 👥 Patient Analytics
-![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
+<img width="633" alt="Patient Analytics Dashboard" src="https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92"/>
 
 #### 📐 Advanced Metrics Implementation:
 - **Geographic Analysis**: Calculated patient distance from hospital using longitude and latitude coordinates
@@ -126,11 +141,3 @@ AVERAGEX(
 
 ## 📁 Data Source
 This project utilizes data provided by Maven Analytics.
-
-## 🛠️ Technical Skills Demonstrated
-- Complex DAX formula creation
-- Advanced data modeling
-- Calculated metrics for healthcare KPIs
-- Geospatial visualization
-- Multi-dimensional analysis
-- Trend identification and forecasting
