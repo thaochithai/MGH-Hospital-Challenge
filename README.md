@@ -45,7 +45,7 @@ The dashboard consists of four main tabs:
 - Multiple insurance coverage is common (avg. 2 per patient), with Medicare being predominant
 - 19% hospital visit rate for admissions
 - Average interval between visits: ~9 months; readmission interval: >1 year
-- 
+  
 ![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
 
 #### 📐 Derived Metrics:
