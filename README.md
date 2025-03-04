@@ -32,10 +32,23 @@ The dashboard consists of four main tabs:
 
 ## 🔍 Key Features & Technical Implementation
 
-### 👥 Patient Analytics
+### Executive View
+![1](https://github.com/user-attachments/assets/db3bdee3-ad8d-4ba3-ba25-2c6956ae84f3)
+
+### 👥 Patient View
+
+#### 💡 Key Insights:
+- Boston residents constitute the largest patient segment
+- Patient demographics skew toward seniors (60-100 years)
+- High patient return rate but moderate new patient acquisition
+- Patients typically live in proximity to the hospital, with older patients residing closer
+- Multiple insurance coverage is common (avg. 2 per patient), with Medicare being predominant
+- 19% hospital visit rate for admissions
+- Average interval between visits: ~9 months; readmission interval: >1 year
+- 
 ![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
 
-#### 📐 Advanced Metrics Implementation:
+#### 📐 Derived Metrics:
 - **Geographic Analysis**: Calculated patient distance from hospital using longitude and latitude coordinates
 - **Patient Acquisition Tracking**: Identified new patients based on first encounter date
 - **Admission Classification**: Categorized visits with encounter duration > 1 day as admissions
@@ -96,22 +109,13 @@ AVERAGEX(
 )
 ```
 
-#### 💡 Key Insights:
-- Boston residents constitute the largest patient segment
-- Patient demographics skew toward seniors (60-100 years)
-- High patient return rate but moderate new patient acquisition
-- Patients typically live in proximity to the hospital, with older patients residing closer
-- Multiple insurance coverage is common (avg. 2 per patient), with Medicare being predominant
-- 19% hospital visit rate for admissions
-- Average interval between visits: ~9 months; readmission interval: >1 year
-
 #### 🎯 Strategic Implications:
 - **Age-Based Care Models**: Tailored approaches for different demographic segments:
   - 30-45 age group: Problem consultations and prenatal care
   - 46-60 age group: Medical interventions and treatments
   - 61+ age group: Regular follow-ups and urgent care services
 
-### ⚕️ Hospital Operations
+### ⚕️ Hospital Operations View
 ![Operations Dashboard](https://github.com/user-attachments/assets/71ee3831-375c-4222-b42d-c44a336aeec1)
 
 #### Key Insights:
@@ -126,7 +130,7 @@ AVERAGEX(
 - COVID-19 pandemic drove substantial increases in vaccination encounters
 - Resource allocation should prioritize peak operational periods
 
-### 💰 Financial Performance
+### 💰 Financial Performance View
 ![Financial Dashboard](https://github.com/user-attachments/assets/41ac47ac-cbd8-4671-85b5-e0227c62082c)
 
 #### Key Insights:
