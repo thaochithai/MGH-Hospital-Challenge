@@ -1,5 +1,5 @@
 # 🏥 MGH Hospital Analytics Dashboard
-![MCHHospital](https://img.shields.io/badge/Power_BI-Hospital_Operation_Finance_Analysis)
+![MCHHospital](https://img.shields.io/badge/Power_BI-Hospital_Analytics)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ## 📊 Overview
