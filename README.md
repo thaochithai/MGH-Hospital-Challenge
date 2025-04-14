@@ -1,4 +1,6 @@
 # 🏥 MGH Hospital Analytics Dashboard
+![MCHHospital](https://img.shields.io/badge/Power_BI-Hospital_Operation_Finance_Analysis)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ## 📊 Overview
 This project presents a comprehensive analytics dashboard for Massachusetts General Hospital (MGH), focusing on patient demographics, hospital operations, and financial performance. The dashboard provides actionable insights to support strategic decision-making and operational improvements.
