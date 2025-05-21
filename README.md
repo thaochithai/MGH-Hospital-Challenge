@@ -1,11 +1,11 @@
-# 🏥 MGH Hospital Analytics Dashboard
+# MGH Hospital Analytics Dashboard
 ![MCHHospital](https://img.shields.io/badge/Power_BI-Hospital_Analytics)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-## 📊 Overview
+## Overview
 This project presents a comprehensive analytics dashboard for Massachusetts General Hospital (MGH), focusing on patient demographics, hospital operations, and financial performance. The dashboard provides actionable insights to support strategic decision-making and operational improvements.
 
-## 🔄 Data Model
+## Data Model
 
 <img width="1080" alt="Screenshot 2025-02-27 204953" src="https://github.com/user-attachments/assets/ff0267bb-a1f9-4153-bff1-90a999ed6839" />
 
@@ -25,21 +25,21 @@ The dashboard utilizes a star schema data model with:
 #### DAX Calculations
 The model leverages numerous DAX measures to create calculated metrics and KPIs that power the visualizations throughout the dashboard.
 
-## 📱 Dashboard Structure
+## Dashboard Structure
 The dashboard consists of four main tabs:
 1. **Executive Summary** - Overall hospital performance across patient, operational, and financial metrics
 2. **Patient Analytics** - Detailed patient demographics and visit patterns
 3. **Hospital Operations** - Operational efficiency and resource utilization
 4. **Financial Performance** - Revenue streams and cost analysis
 
-## 🔍 Key Features & Technical Implementation
+## Key Features & Technical Implementation
 
 ### Executive View
 ![1](https://github.com/user-attachments/assets/db3bdee3-ad8d-4ba3-ba25-2c6956ae84f3)
 
-### 👥 Patient View
+### Patient View
 
-#### 💡 Key Insights:
+#### Key Insights:
 - Boston residents constitute the largest patient segment
 - Patient demographics skew toward seniors (60-100 years)
 - High patient return rate but moderate new patient acquisition
@@ -50,7 +50,7 @@ The dashboard consists of four main tabs:
   
 ![Patient Analytics Dashboard](https://github.com/user-attachments/assets/02fec41e-a62d-448f-a657-68d0094d8c92)
 
-#### 📐 Derived Metrics:
+#### Derived Metrics:
 - **Geographic Analysis**: Calculated patient distance from hospital using longitude and latitude coordinates
 - **Patient Acquisition Tracking**: Identified new patients based on first encounter date
 - **Admission Classification**: Categorized visits with encounter duration > 1 day as admissions
@@ -111,13 +111,13 @@ AVERAGEX(
 )
 ```
 
-#### 🎯 Strategic Implications:
+#### Strategic Implications:
 - **Age-Based Care Models**: Tailored approaches for different demographic segments:
   - 30-45 age group: Problem consultations and prenatal care
   - 46-60 age group: Medical interventions and treatments
   - 61+ age group: Regular follow-ups and urgent care services
 
-### ⚕️ Hospital Operations View
+### Hospital Operations View
 ![Operations Dashboard](https://github.com/user-attachments/assets/71ee3831-375c-4222-b42d-c44a336aeec1)
 
 #### Key Insights:
@@ -132,7 +132,7 @@ AVERAGEX(
 - COVID-19 pandemic drove substantial increases in vaccination encounters
 - Resource allocation should prioritize peak operational periods
 
-### 💰 Financial Performance View
+### Financial Performance View
 ![Financial Dashboard](https://github.com/user-attachments/assets/41ac47ac-cbd8-4671-85b5-e0227c62082c)
 
 #### Key Insights:
@@ -147,5 +147,5 @@ AVERAGEX(
 - Revenue optimization should focus on urgent care and check-up service lines
 - Consider expanded prenatal services targeting 30-45 age group (3x higher per-encounter cost)
 
-## 📁 Data Source
+## Data Source
 This project utilizes data provided by Maven Analytics.
